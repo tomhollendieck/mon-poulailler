@@ -2,23 +2,25 @@
 {% load static %}
 
 {% block content %}
+    <h1 style="color: orange; font-family: 'Candara'; font-size: 4Opx; font-weight: bold;">Mes poules</h1>
     <div class="container">
     {% for character in characters %}
         <div class="character">
             <h2><a href="{% url 'character_detail' id_character=character.id_character %}">{{ character.id_character }}</a></h2>
-            <p>Race : {{ character.race }}</p>
-            <p>État : {{ character.etat }}</p>
-            <p>Lieu : {{ character.lieu|linebreaksbr }}</p>
+            <p style="font-family: 'Barlow Semi Condensed'; font-size: 16px;">Race : {{ character.race }}</p>
+            <p style="font-family: 'Barlow Semi Condensed'; font-size: 16px;">État : {{ character.etat }}</p>
+            <p style="font-family: 'Barlow Semi Condensed'; font-size: 16px;">Lieu : {{ character.lieu|linebreaksbr }}</p>
             <img src="{% static 'img/' %}{{ character.photo }}.jpg" alt="{{ character.id_character }}" style="width: 200px; height: 200px;">
         </div>
     {% endfor %}
     </div>
 
+    <h1 style="color: orange; font-family: 'Candara'; font-size: 4Opx; font-weight: bold; margin-top: 60px;">Mes équipements</h1>
     <div class="container">
     {% for equipement in equipements %}
         <div class="equipement">
             <h2><a href="{% url 'equipement_detail' id_equip=equipement.id_equip %}">{{ equipement.id_equip }}</a></h2>
-            <p>Disponibilité : {{ equipement.disponibilite|linebreaksbr }}</p>
+            <p style="font-family: 'Barlow Semi Condensed'; font-size: 16px;">Disponibilité : {{ equipement.disponibilite|linebreaksbr }}</p>
             <img src="{% static 'img/' %}{{ equipement.photo }}.jpg" alt="{{ equipement.id_equipement }}" style="width: 200px; height: 200px;">
         </div>
     {% endfor %}

@@ -8,13 +8,13 @@
         </div>
     {% endif %}
     <div class="character">
-        <h1><a href="/">{{ character.id_character }}</a></h1>
-        <p>Race : {{ character.race }}</p>
-        <p>État : {{ character.etat }}</p>
-        <p>Lieu : {{ character.lieu|linebreaksbr }}</p>
-        <img src="{% static 'img/' %}{{ character.photo }}.jpg" alt="{{ character.id_character }}" style="width: 200px; height: 200px;">
+        <h1 style="margin-top: -10px"><a href="{% url 'character_detail' id_character=character.id_character %}">{{ character.id_character }}</a></h1>
+        <p style="font-family: 'Barlow Semi Condensed'; font-size: 16px;">Race : {{ character.race }}</p>
+        <p style="font-family: 'Barlow Semi Condensed'; font-size: 16px;">État : {{ character.etat }}</p>
+        <p style="font-family: 'Barlow Semi Condensed'; font-size: 16px;">Lieu : {{ character.lieu|linebreaksbr }}</p>
+        <img src="{% static 'img/' %}{{ character.photo }}.jpg" alt="{{ character.id_character }}" style="width: 300px; height: 300px;">
         <form method="POST" class="post-form">{% csrf_token %}
-            <b> Changer : </b> {{ form.as_ul }}
+            <u> Changer : </u> {{ form.as_ul }}
             <button type="submit" class="btn btn-outline-light">OK</button>
             <a href="{% url 'character_list' %}">Back</a>
         </form>

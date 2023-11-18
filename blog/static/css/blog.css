@@ -14,11 +14,14 @@
     text-decoration: none;
 }
 
-h1,
+h1 {
+    font-family: 'Lobster', bold;
+}
+
 h2,
 h3,
 h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster', italic;
 }
 
 .date {

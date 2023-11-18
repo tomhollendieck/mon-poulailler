@@ -33,7 +33,7 @@ def character_detail(request, id_character):
             else:
                 character.etat = "endormie"
             character.save()
-            return redirect('character_detail', id_character=id_character, message='')
+            return redirect('character_detail', id_character=id_character)
         else:
             message = 'Attention, ce lieu est déjà occupé !'
             character.lieu.id_equip = ancien_lieu.id_equip

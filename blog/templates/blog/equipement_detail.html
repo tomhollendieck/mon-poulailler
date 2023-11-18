@@ -3,8 +3,8 @@
 
 {% block content %}
     <div class="equipement">
-        <h2>{{ equipement.id_equip }}</h2>
-        <p>Disponibilité : {{ equipement.disponibilite|linebreaksbr }}</p>
-        <img src="{% static 'img/' %}{{ equipement.photo }}.jpg" alt="{{ equipement.id_equip }}" style="width: 200px; height: 200px;">
+        <h2 style="margin-top: -10px"><a href="{% url 'equipement_detail' id_equip=equipement.id_equip %}">{{ equipement.id_equip }}</a></h2>
+        <p style="font-family: 'Barlow Semi Condensed'; font-size: 16px; margin-top: 10px; margin-bottom: 20px; width: 1000px;">Disponibilité : {{ equipement.disponibilite|linebreaksbr }}</p>
+        <img src="{% static 'img/' %}{{ equipement.photo }}.jpg" alt="{{ equipement.id_equip }}" style="width: 400px; height: 400px;">
     </div>
 {% endblock %}
