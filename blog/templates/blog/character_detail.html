@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if message %}
+        <div class="alert alert-danger" role="alert">
+            {{message}}
+        </div>
+    {% endif %}
+    <div class="character">
+        <h1><a href="/">{{ character.id_character }}</a></h1>
+        <p>Race : {{ character.race }}</p>
+        <p>État : {{ character.etat }}</p>
+        <p>Lieu : {{ character.lieu|linebreaksbr }}</p>
+        <img src="{% static 'img/' %}{{ character.photo }}.jpg" alt="{{ character.id_character }}" style="width: 200px; height: 200px;">
+        <form method="POST" class="post-form">{% csrf_token %}
+            <b> Changer : </b> {{ form.as_ul }}
+            <button type="submit" class="btn btn-outline-light">OK</button>
+            <a href="{% url 'character_list' %}">Back</a>
+        </form>
+    </div>
+{% endblock %}
